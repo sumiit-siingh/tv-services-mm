@@ -142,7 +142,7 @@ export default function Service() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 0.55 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className=" inset-0 w-full h-100 object-cover "/>
+          className=" inset-0 w-full h-150 object-cover "/>
         </motion.div>
 
       </motion.div>
