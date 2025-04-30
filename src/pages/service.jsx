@@ -4,6 +4,7 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import Spotlight from "../component/ui/Spotlight";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { CardContainer, CardBody, CardItem } from "../component/ui/3d-card";
+import { MdMiscellaneousServices } from "react-icons/md";
 
 export default function Service() {
   return (
@@ -32,7 +33,7 @@ export default function Service() {
 
         {/* Content Animation */}
         <motion.div
-          className="relative flex flex-col items-center justify-center md:gap-6  text-outline md:mt-10 mt-20 gap-4 "
+          className="relative flex flex-col items-center justify-center md:gap-6  text-outline md:mt-12 mt-18 gap-4 "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
@@ -53,7 +54,7 @@ export default function Service() {
           <div className="flex flex-wrap items-center gap-6 mt-2">
             <IoPhonePortraitOutline className="text-green-600 text-3xl md:text-4xl bg-white/80 p-2 rounded-full" />
             <h2 className="text-white font-limelight-regular text-xl md:text-2xl">
-              Call us now at: <strong className="font-poppins-regular text-white underline">+91 7800031888</strong>
+              Call us now at: <strong className="font-poppins-regular text-red-500 underline">+91 7800031888</strong>
             </h2>
           </div>
         </motion.div>
@@ -136,13 +137,41 @@ export default function Service() {
           ))}
 
         </div>
-        <motion.div className="w-full ">
-          <motion.img src="https://res.cloudinary.com/dq829orud/image/upload/v1746009289/BigScreens_gjxtag.jpg" 
-           alt="Wallpaper"
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 0.55 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className=" inset-0 w-full h-150 object-cover "/>
+        <motion.div className="w-full relative">
+          <motion.img src="https://res.cloudinary.com/dq829orud/image/upload/v1746009289/BigScreens_gjxtag.jpg"
+            alt="Wallpaper"
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 0.55 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className=" inset-0 w-full h-150 object-cover blur-[1px]" />
+          <div className="absolute inset-0 flex flex-col items-center justify-start p-6 gap-5 ">
+            <motion.div
+              className="flex flex-col gap-6 items-center justify-center  "
+            ><div className="text-white text-2xl sm:text-4xl font-bold   text-outline bg-gra dient-to-r from-green-300 via-blue-500 to-purple-600 rounded-full p-1  ">
+                We repair all major issues of LED TV
+              </div>
+              <div className=" text-white text-outline ">All Brand TV Repair Spot </div>
+              <div className=" text-white/80 text-center text-outline ">Get best TV repairs at your door step. We are providing television repair & Installation/ Un-installation Services at affordable rates in your area. </div>
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.2 }} // triggers only once, when 20% is visible
+                className="flex flex-col justify-start text-outline ml-40 text-xl gap-5 "
+              >
+                <h1 className="flex items-center text-white gap-4"><MdMiscellaneousServices />Backlight Issue</h1>
+                <h1 className="flex items-center text-white gap-4"><MdMiscellaneousServices />No Power Issue</h1>
+                <h1 className="flex items-center text-white gap-4"><MdMiscellaneousServices />Vertical colored lines on Screen</h1>
+                <h1 className="flex items-center text-white gap-4"><MdMiscellaneousServices />LED TV Display goes blank</h1>
+                <h1 className="flex items-center text-white gap-4"><MdMiscellaneousServices />HDMI port not working</h1>
+                <h1 className="flex items-center text-white gap-4"><MdMiscellaneousServices />Speakers Issues</h1>
+                <h1 className="flex items-center text-white gap-4"><MdMiscellaneousServices />Android TV stuck on logo</h1>
+                <h1 className="flex items-center text-white gap-4"><MdMiscellaneousServices />LED TV not connecting to wifi</h1>
+                <h1 className="flex items-center text-white gap-4"><MdMiscellaneousServices />LED TV with Screen black but there is Sound</h1>
+              </motion.div>
+            </motion.div>
+
+          </div>
         </motion.div>
 
       </motion.div>
