@@ -7,10 +7,10 @@ import { CardContainer, CardBody, CardItem } from "../component/ui/3d-card";
 
 export default function Service() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-black/[0.96] antialiased flex flex-col items-center justify-start">
+    <div className="relative min-h-screen w-full overflow-hidden bg-black/[0.96] antialiased flex flex-col items-center justify-start ">
 
       {/* Background Grid */}
-      <div className="pointer-events-none absolute inset-0 select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)] [background-size:40px_40px]" />
+      <div className="pointer-events-none absolute inset-0 select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)] [background-size:40px_40px] " />
 
       {/* Background Spotlight */}
       <Spotlight className="top-0 left-0 md:-top-10 md:left-40" fill="white" />
@@ -27,12 +27,12 @@ export default function Service() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 0.55 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="absolute inset-0 w-full h-80 object-cover z-0 blur-[2px]"
+          className="absolute inset-0 w-full h-80 object-cover z-0 blur-[2px] mt-10"
         />
 
         {/* Content Animation */}
         <motion.div
-          className="relative flex flex-col items-center justify-center gap-5 text-outline m-4"
+          className="relative flex flex-col items-center justify-center md:gap-6  text-outline md:mt-10 mt-20 gap-4 "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
