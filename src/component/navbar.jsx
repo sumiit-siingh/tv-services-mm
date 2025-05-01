@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <div
-            className={`h-20 w-full flex items-center justify-around font-[Poppins]  px-4 z-[100] fixed top-0 left-0 select-none transition-all duration-300  ${scrolled ? "bg-transparent shadow-md backdrop-blur" : "bg-transparent "}`}
+            className={`h-20 w-full flex items-center justify-between font-[Poppins]  px-4 z-[100] fixed top-0 left-0 select-none transition-all duration-300  ${scrolled ? "bg-transparent shadow-md backdrop-blur" : "bg-transparent "}`}
         >
             {/* Logo */}
             <div
@@ -51,7 +51,7 @@ const Navbar = () => {
             </div>
 
             {/* Hamburger icon for mobile */}
-            <div className="sm:hidden text-3xl text-blue-600 border rou  bg-amber-50 cursor-pointer transition hover:scale-110 ease-in-out" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <div className="sm:hidden text-3xl text-white p-1  bg-blue-500 cursor-pointer transition hover:scale-110 ease-in-out shadow-sm shadow-blue-500" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 ☰
             </div>
 
