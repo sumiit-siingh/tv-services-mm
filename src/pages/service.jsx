@@ -56,7 +56,7 @@ export default function Service() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -71,15 +71,15 @@ export default function Service() {
 
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900 antialiased flex flex-col items-center justify-start">
+    <div className=" min-h-screen w-full overflow-hidden bg-gradient-to-r from-gray-100 to-gray-300 antialiased flex flex-col items-center justify-start">
       {/* Background Grid - Move to lower z-index */}
-      <div className="pointer-events-none absolute inset-0 select-none bg-gradient-to-r from-rose-100 to-teal-100 [backgro und-size:30px_30px] -z-1" />
+      {/* <div className="pointer-events-none absolute inset-0 select-none bg-gradient-to-r from-rose-100 to-teal-100 [backgro und-size:30px_30px] -z-1" /> */}
 
       {/* Background Spotlight */}
-      <Spotlight className="top-0 left-0 md:-top-10 md:left-40 z-0" fill="white" />
+      {/* <Spotlight className="top-0 left-0 md:-top-10 md:left-40 z-0" fill="white" /> */}
 
       <motion.div
-        className="relative min-h-screen w-full overflow-hidden mt-25"
+        className="relative min-h-screen w-full overflow-hidden mt-12"
         initial={{ y: "100%" }}
         animate={{ y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -133,13 +133,13 @@ export default function Service() {
             { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007670/installing-mount-tv_f3vfcc.jpg", p_name: "Installations", des: "We provide Insatallations Services of all brands. Same Day Service. Just contact our service Center." },
             { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007711/the-man-repairing-broken-tv-at-home_coemks.jpg", p_name: "T.V Panel Repair", des: "We provide the best quality LED TV panel repair services in Kanpur U.P." },
             { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007771/cr_t_0_25_l_0_25_w_100_25_h_100_25_rb2r2y.jpg", p_name: "Curved T.V Repair", des: "We provide Curved Tv Repair Services. With the support of our expert engineers, we are engaged in offering all brand television services to our valued customers." },
-            { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007813/Best-Television-repair-service-in-Lucknow-e1724605312471_wmrfdx.png", p_name: "Smart T.V Repair", des: "We Provide Doorstep Tv Repair Service For Smart LED TV. Our Expert Engineer Will Visit your Home." },
             { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007850/20130529205609127_5755D67K_iyy3d7.jpg", p_name: "Plasma T.V Repair", des: "Our specialist fixes generally all issues at your door step yet assuming we found any serious issue we carry your plasma to us, fix that and drop it at your place." },
+            { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007813/Best-Television-repair-service-in-Lucknow-e1724605312471_wmrfdx.png", p_name: "Smart T.V Repair", des: "We Provide Doorstep Tv Repair Service For Smart LED TV. Our Expert Engineer Will Visit your Home." },
             { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746008261/1520201908882_ziyfue.jpg", p_name: "3D T.V Repair", des: "We provide 3D Tv Repair Services. We provide the best quality LED 3D TV repair services in Kanpur, U.P. We are here to repair all brands of 3D TV in Kanpur." },
           ].map((item, index) => (
             <div key={index} className=" h-full flex justify-center ">
               <CardContainer className="w-full max-w-sm cursor-pointer md:m-0 ml-10 mr-10 md:h-fit h-72 ">
-                <CardBody className="bg-blue-500 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-full rounded-xl p-2 border flex flex-col h-100 shadow-xl shadow-white">
+                <CardBody className="bg-blue-500 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-full rounded-xl p-2 border flex flex-col h-auto shadow-xl shadow-white">
                   <CardItem translateZ={100} className="w-full mt-4">
                     <motion.img
                       src={item.image}
@@ -154,8 +154,8 @@ export default function Service() {
                       }}
                     />
                   </CardItem>
-                  <div className="absolute  text-xl font-bold text-blue-500 pl-4 pr-4 rounded-xl mt-7 ml-4 text-ou tline  bg-white">{item.p_name}</div>
-                  <CardItem as="p" className="text-blue-500 bg-white text-sm max-w-sm mt-6 p-2 rounded-xl hover:border hover:border-black hover:shadow-black hover:shadow-2xl">
+                  <div className="absolute  text-xl font-bold text-blue-500 pl-4 pr-4 rounded-xl mt-7 ml-4 text-ou tline shadow-xl shadow-black bg-white">{item.p_name}</div>
+                  <CardItem as="p" className="text-blue-500 bg-white text-sm max-w-sm mt-6 p-2 rounded-xl hover:border hover:border-black hover:shadow-black hover:shadow-2xl font-poppins-regular">
                     {item.des}
                   </CardItem>
                 </CardBody>
@@ -164,13 +164,13 @@ export default function Service() {
           ))}
         </div>
 
-        <motion.div className="w-full relative">
+        <motion.div className="w-full relative ">
           <motion.img src="https://res.cloudinary.com/dq829orud/image/upload/v1746114188/Untitled_design_sfdich.png"
             alt="Wallpaper"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className=" inset-0 md:w-full w-fit md:h-150 h-80 object-cover " />
+            className=" top-[550px]  md:w-full md:h-[500px] h-[350px] object-cover -z-10  " />
           {/* <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-full">
             <motion.div className="rotate-90">
               <div className="text-blue-500 text-2xl sm:text-4xl font-bold bg-white/80 rounded-full px-5 py-2">
@@ -181,15 +181,15 @@ export default function Service() {
 
           <div className="flex flex-col justify-center items-center gap-6 p-4 mt-5">
             {/* Header Texts */}
-            <div className="text-white w-fit text-4xl text-center  pl-4 pr-4 p-2 font-semibold transform transition hover:scale-110 hover:shadow-2xl hover:shadow-blue-500 ease-in-out cursor-pointer shadow-lg border bg-blue-500 opacity-90 rounded-2xl  ">
+            <div className="text-white w-fit text-4xl text-center  pl-4 pr-4 p-2 font-semibold transform transition hover:scale-110 hover:shadow-2xl hover:shadow-blue-500 ease-in-out cursor-pointer shadow-lg border bg-blue-600 opacity-90 rounded-2xl font-poppins-regular  ">
               All Brand TV Repair Spot
             </div>
-            <div className="text-blue-500 rounded-2xl text-center p-4  bg-white opacity-90 shadow-lg shadow-blue-400">
+            <div className="text-blue-600 rounded-2xl text-center p-4  bg-white opacity-90 shadow-lg shadow-blue-400 font-poppins-regular">
               Get best TV repairs at your door step. We are providing television repair & Installation/ Un-installation Services at affordable rates in your area.
             </div>
           </div>
           {/* Main Responsive Section */}
-          <div className="flex flex-col md:flex-row gap-6 items-center md:ml-45 justify-center mt-4">
+          <div className="flex flex-col md:flex-row gap-6 items-center md:ml-45 justify-center mt-4 font-poppins-regular">
             {/* Points List */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
@@ -280,19 +280,64 @@ export default function Service() {
 
         </motion.div>
         <div className="max-w-md mx-auto p-6 md:w-full w-fit rounded-lg shadow-md mt-20">
-          <div className="flex items-center justify-between rounded-lg"><h2 className="text-xl  font-bold mb-4 text-blue-500 bg-white  w-fit p-1 shadow-md rounded-lg ">Contact Us</h2>
-            <PiCallBellBold className="text-white bg-blue-500 text-4xl p-2 rounded-lg mb-4 font-semibold shadow-md " />
+          <div className="flex items-center justify-between rounded-lg"><h2 className="text-xl  font-bold mb-4 text-white bg-blue-600 text-outline  w-fit p-2 shadow-md rounded-lg ">Contact Us</h2>
+            <PiCallBellBold className="text-white bg-blue-600 text-4xl p-2 rounded-lg mb-4 font-semibold shadow-md text-outline" />
           </div>
 
           <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
-            <input type="text" name="user_name" placeholder="Your Name" required className="p-2 border bg-white border-blue-500 rounded placeholder-blue-300" />
-            <input type="tel" name="user_phone" placeholder="Mobile Number" required className="p-2 border rounded  bg-white border-blue-500 placeholder-blue-300" />
-            <textarea name="message" placeholder="Your Message" rows="4" required className="p-2 border rounded  bg-white border-blue-500 placeholder-blue-300"></textarea>
-            <button type="submit" className="bg-blue-600 text-white py-2 rounded hover:bg-blue-500 shadow-xl">
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Your Name"
+              required
+              className="p-2 border border-blue-500 rounded bg-white placeholder-blue-300 focus:border-blue-600 focus:outline"
+            />
+            <input
+              type="tel"
+              name="user_phone"
+              placeholder="Mobile Number"
+              required
+              className="p-2 border border-blue-500 rounded bg-white placeholder-blue-300 focus:border-blue-600 focus:outline"
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="4"
+              required
+              className="p-2 border border-blue-500 rounded bg-white placeholder-blue-300 focus:border-blue-600 focus:outline"
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-blue-600 text-white py-2 rounded hover:bg-blue-500 shadow-xl text-outline"
+            >
               Send Request
             </button>
           </form>
+
         </div>
+        <div className="bg-blue-500 flex flex-col md:flex-row items-center justify-between rounded-md md:m-5 m-2 md:h-40">
+          {/* Address Section */}
+          <div className="bg-white text-blue-600 m-1  md:m-1 md:h-[90%] md:mt-1 p-2   rounded-md flex-1  ">
+            <div className="text-3xl font-semibold font-poppins-regular mb-2 bg-blue-600 text-white pl-2 rounded-md">Address</div>
+            <div className="font-poppins-regular font-semibold">3/12, labour colony, Chunni Ganj, dada nagar,</div>
+            <div>Kanpur, Uttar Pradesh 208022</div>
+          </div>
+
+          {/* Map Section */}
+          <div className="m-1  p-1 md:p-0 rounded-md flex-1 md:h-[90%] w-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14285.357196850442!2d80.3165300871582!3d26.477018099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c39b2cc74c0c9%3A0xa64d2d1d566e3f0e!2sM.M.%20ENTERPRISES!5e0!3m2!1sen!2sin!4v1746131946764!5m2!1sen!2sin"
+              className="w-full h-full rounded-md"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+       <div>
+        <div className="text-blue-600 bg-white p-2 text-center rounded-xl">Copyright © 2025 M.M Enterprises | Powered by<br></br><strong>M.M Enterprises</strong> </div>
+       </div>
 
       </motion.div>
     </div>

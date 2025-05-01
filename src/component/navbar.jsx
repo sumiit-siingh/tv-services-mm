@@ -78,7 +78,7 @@ const Navbar = () => {
                 </button>
             </div> */}
             {isMobileMenuOpen && (
-                <div className="md:hidden bg-blue-500 flex flex-col items-center  text-white py-4 space-y-4 absolute top-20 left-0 w-full z-[99] cursor-pointer  border-1 border-black rounded-xl ">
+                <div className="md:hidden bg-gradient-to-r from-rose-100 to-teal-100 flex flex-col items-center  text-black py-4 space-y-4 absolute top-20 left-0 w-full z-[99] cursor-pointer   rounded-xl ">
                     {["Home", "About us", "Services", "Contact"].map((item, i) => (
                         <div
                             key={i}
