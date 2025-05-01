@@ -78,7 +78,7 @@ const Navbar = () => {
                 </button>
             </div> */}
             {isMobileMenuOpen && (
-                <div className="md:hidden bg-gradient-to-r from-rose-100 to-teal-100 flex flex-col items-center  text-black py-4 space-y-4 absolute top-20 left-0 w-full z-[99] cursor-pointer   rounded-xl ">
+                <div className="md:hidden bg-gradient-to-r from-gray-100 to-gray-300 flex flex-col items-center  text-blue-800 py-4 space-y-4 absolute top-20 left-0 w-full  cursor-pointer   rounded-xl ">
                     {["Home", "About us", "Services", "Contact"].map((item, i) => (
                         <div
                             key={i}
@@ -87,7 +87,7 @@ const Navbar = () => {
                                 navigate(`/${item.toLowerCase()}`);
                                 setIsMobileMenuOpen(false); // Close menu after click
                             }}
-                        ><div className='hover:underline transition hover:scale-110 hover:bg-white pl-1 pr-1 hover:border hover:border-black  rounded-xl hover:text-blue-500'>
+                        ><div className='hover:underline transition hover:scale-110 hover:bg-white pl-1 pr-1 hover:border hover:border-black rounded-xl hover:text-blue-500'>
                             {item}
                             </div>
                         </div>
