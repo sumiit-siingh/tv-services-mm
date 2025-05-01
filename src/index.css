@@ -72,3 +72,16 @@
 @theme{
   --font-poppins-regular:"Poppins", sans-serif;
 }
+
+
+.fill-transparent {
+  fill: transparent;
+}
+
+.stroke-neutral-800 {
+  stroke: #1f2937;
+}
+
+.stroke-neutral-200 {
+  stroke: #e5e7eb;
+} 

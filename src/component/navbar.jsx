@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom'
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
-
+import HoverText from './ui/hover-text';
 
 const Navbar = () => {
     const navigate = useNavigate()
@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <div
-            className={`h-20 w-full flex items-center justify-around font-[Poppins]  px-4 z-[100] fixed top-0 left-0 select-none transition-all duration-300   ${scrolled ? "bg-black/90 shadow-md backdrop-blur" : "bg-transparent"}`}
+            className={`h-20 w-full flex items-center justify-around font-[Poppins]  px-4 z-[100] fixed top-0 left-0 select-none transition-all duration-300  ${scrolled ? "bg-transparent shadow-md backdrop-blur" : "bg-transparent "}`}
         >
             {/* Logo */}
             <div
@@ -34,11 +34,13 @@ const Navbar = () => {
                 className="font-extrabold text-2xl transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 flex justify-around items-center"
             > 
                 
-                    <div className="relative w-30 h-12 border-5 border-white/20 rounded-full -rotate-35 ">
+                    <div className="relative w-30 h-12 border-5 border-blue-200 rounded-full -rotate-35 ">
                         <div className="absolute inset-0 flex items-center justify-center rotate-35">
                             <div className='flex flex-col items-center'>
                             <h1 className="text-white font-beau-rivag e-regular text-4xl text-outline">M.M </h1>
-                            <h1 className=" font-beau-rivage-regular text-4xl text-outline pl-2 text-red-500"> Enterprises </h1>
+                            <h1 className=" font-beau-rivage-regular text-4xl text-outline pl-2 text-blue-500"> Enterprises </h1>
+                            {/* < HoverText text="M.M" duration={0}  className="cursor-pointer text-4xl  font-extrabold"/>
+                            < HoverText text="Enterprises" duration={0}  className="cursor-pointer text-xl font-beau-rivage-regular"/> */}
                             </div>
                         </div>
                     </div>
@@ -49,16 +51,16 @@ const Navbar = () => {
             </div>
 
             {/* Hamburger icon for mobile */}
-            <div className="sm:hidden text-3xl text-white cursor-pointer" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <div className="sm:hidden text-3xl text-blue-600 border rou  bg-amber-50 cursor-pointer transition hover:scale-110 ease-in-out" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 ☰
             </div>
 
             {/* Desktop menu */}
-            <div className="hidden md:flex max-w-[100%] text-[15px] gap-16 justify-around">
+            <div className="hidden md:flex  max-w-[100%] text-[15px] gap-16 justify-around">
                 {["Home", "About us", "Services", "Contact"].map((item, i) => (
                     <div
                         key={i}
-                        className="cursor-pointer text-white text-outline transition duration-300 hover:-translate-y-1 hover:scale-110 hover:border-b-2"
+                        className='text-black cursor-pointer hover:underline transition hover:scale-110 hover:bg-white pl-1 pr-1 hover:border hover:border-black  rounded-xl hover:text-blue-500 '
                         onClick={() => navigate(`/${item.toLowerCase()}`)}
                     >
                         {item}
@@ -76,7 +78,7 @@ const Navbar = () => {
                 </button>
             </div> */}
             {isMobileMenuOpen && (
-                <div className="md:hidden bg-black flex flex-col items-center  text-white py-4 space-y-4 absolute top-20 left-0 w-full z-[99] cursor-pointer">
+                <div className="md:hidden bg-blue-500 flex flex-col items-center  text-white py-4 space-y-4 absolute top-20 left-0 w-full z-[99] cursor-pointer  border-1 border-black rounded-xl ">
                     {["Home", "About us", "Services", "Contact"].map((item, i) => (
                         <div
                             key={i}
@@ -85,8 +87,9 @@ const Navbar = () => {
                                 navigate(`/${item.toLowerCase()}`);
                                 setIsMobileMenuOpen(false); // Close menu after click
                             }}
-                        >
+                        ><div className='hover:underline transition hover:scale-110 hover:bg-white pl-1 pr-1 hover:border hover:border-black  rounded-xl hover:text-blue-500'>
                             {item}
+                            </div>
                         </div>
                     ))}
 {/* 

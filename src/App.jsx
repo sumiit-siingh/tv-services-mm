@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Service from './pages/service'
 import Layout from './layout';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Contact from './pages/contact';
 function App() {
 
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
         <Route path="/" element={<Service/>}/>
+        <Route path="/contact" element={<Contact/>}/>
         </Route>
       </Routes>
     </Router>
