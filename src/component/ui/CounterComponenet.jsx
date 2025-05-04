@@ -5,7 +5,7 @@ import { IoIosStarOutline } from 'react-icons/io';
 import { BsShop } from 'react-icons/bs';
 
 const counters = [
-    { icon: <HiWrenchScrewdriver size={50} />, number: 100, label: 'Repairs Done' },
+    { icon: <HiWrenchScrewdriver size={50} />, number: 100 , label: ' + Repairs Done' },
     { icon: <Ri24HoursLine size={50} />, number: 24, label: 'Hours Support' },
     { icon: <IoIosStarOutline size={50} />, number: 150, label: '5 Star Reviews' },
     { icon: <BsShop size={50} />, number: 50, label: 'Shops' },

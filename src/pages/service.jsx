@@ -79,13 +79,13 @@ export default function Service() {
         <div className="flex flex-col md:flex-row items-center md:justify-around ">
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3 mt-5 md:mt-10">
             <div className="text-4xl md:text-6xl font-semibold font-poppins-regular">
-              M.M <a className="font-beau-rivage-regular text-red-500">Electronics</a>
+              M.M <a className="font-beau-rivage-regular text-red-500">Enterprises</a>
             </div>
             <div className="text-xl font-poppins-regular font-semibold md:font-bold">Provides</div>
             <div className="text-xl md:text-2xl font-semibold font-poppins-regular">
               Sony, LG, Samsung, OLED, MI & every other brand Specialist Engineer
             </div>
-            <div className="text-red-400 text-xl md:text-2xl font-bold md:font-extrabold">In</div>
+            <div className="text-red-500 text-xl md:text-2xl font-bold md:font-extrabold">In</div>
             <div className="text-2xl md:text-3xl font-bold font-poppins-regular">
               Kanpur, Uttar Pradesh
             </div>
