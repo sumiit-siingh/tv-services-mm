@@ -5,7 +5,7 @@ const Navbar = () => {
     const [isHover, setIsHover] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeItem, setActiveItem] = useState("Services");
+    const [activeItem, setActiveItem] = useState("");
     const menuItems = ["Home", "About us", "Services", "Contact"];
 
     // Scroll effect for the navbar
