@@ -9,9 +9,9 @@ const FloatingContactWidget = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end  ">
       {isOpen && (
-        <div className="mb-3 space-y-2 animate-fade-in">
+        <div className="mb-3 space-y-2 animate-fade-in ">
           <a
             href="tel:+917800031888"
             className="bg-red-500 text-white text-2xl px-4 py-2 rounded-full shadow-md flex items-center space-x-2 hover:bg-red-600 transition"
@@ -33,7 +33,7 @@ const FloatingContactWidget = () => {
 
       <button
         onClick={toggleWidget}
-        className={`bg-blue-500 text-white p-4 rounded-full shadow-lg transition-transform duration-300 ease-in-out ${
+        className={`bg-blue-500 text-white p-4 rounded-full shadow-lg transition-transform duration-300 ease-in-out cursor-pointer ${
           isOpen ? "rotate-180" : ""
         }`}
       >
