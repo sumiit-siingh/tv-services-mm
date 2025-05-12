@@ -85,3 +85,7 @@
 .stroke-neutral-200 {
   stroke: #e5e7eb;
 } 
+
+.scroll-element {
+  padding-top: 40px;  /* Yeh navbar ka height adjust karega */
+}

@@ -26,6 +26,7 @@ import CounterComponent from "../component/ui/CounterComponenet";
 import ScrollImageReveal from "../component/ui/ScrollImageReveal";
 import FloatingContactWidget from "../component/ui/FloatingContactWidget";
 
+
 const images = [
   "https://res.cloudinary.com/dq829orud/image/upload/v1746089584/IMG-20250501-WA0008_p39xm4.jpg",
   "https://res.cloudinary.com/dq829orud/image/upload/v1746089584/IMG-20250501-WA0007_nwusp5.jpg",
@@ -38,7 +39,10 @@ const images = [
   "https://res.cloudinary.com/dq829orud/image/upload/v1746089584/IMG-20250501-WA0011_bdkxee.jpg",
 ];
 
+
+
 export default function Service() {
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -64,7 +68,6 @@ export default function Service() {
   };
 
 
-
   return (
     <div className=" min-h-screen w-full overflow-hidden bg-gradient-to-r from-gray-100 to-gray-300 antialiased flex flex-col items-center justify-start">
 
@@ -77,7 +80,7 @@ export default function Service() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <div className="flex flex-col md:flex-row items-center md:justify-around ">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3 mt-5 md:mt-10">
+          <section id="home"  ><div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3 mt-5 md:mt-10">
             <div className="text-4xl md:text-6xl font-semibold font-poppins-regular">
               M.M <a className="font-beau-rivage-regular text-red-500">Enterprises</a>
             </div>
@@ -89,7 +92,8 @@ export default function Service() {
             <div className="text-2xl md:text-3xl font-bold font-poppins-regular">
               Kanpur, Uttar Pradesh
             </div>
-          </div>
+          </div></section>
+
 
           <div className="mt-5 md:mt-0 mb-5">
             <a href="tel:+917800031888">
@@ -105,24 +109,26 @@ export default function Service() {
         <div className="  ">
           <ImageGallery images={images} />
         </div>
+        <section id="aboutus">
+          <motion.div
+            className="relative flex flex-col items-center justify-center md:mt-10  mt-5 gap-y-5 "
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
+          >
 
-        <motion.div
-          className="relative flex flex-col items-center justify-center md:mt-10  mt-5 gap-y-5 "
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
-        >
+            <h2 className=" font-bold font-poppins-regular text-2xl md:text-4xl text-center">We <a className="text-red-500">Repair</a>  All Brands LED LCD And Plasma TV</h2>
+            <div className="text-center md:text-xl text-sm p-2 font-poppins-regular"><strong>M.M</strong> <span className="font-beau-rivage-regular md:font-bold font-semibold md:text-3xl text-2xl text-red-500">Enterprises</span> TV Service Center repair all brands of Television on affordable price with genuine spare parts. We repair all types of LCD TV, LED TV, Plasma & 4K Smart TV. We provide doorstep home services. If you are looking for  TV Repair Services in<strong> Kanpur, Uttar Pradesh </strong>then you are on the right place. Getting your LCD, LED TV for repair can be hard for you because of it size. Don’t worry we offer awesome on site Home repair service</div>
 
-          <h2 className=" font-bold font-poppins-regular text-2xl md:text-4xl text-center">We <a className="text-red-500">Repair</a>  All Brands LED LCD And Plasma TV</h2>
-          <div className="text-center md:text-xl text-sm p-2 font-poppins-regular"><strong>M.M</strong> <span className="font-beau-rivage-regular md:font-bold font-semibold md:text-3xl text-2xl text-red-500">Enterprises</span> TV Service Center repair all brands of Television on affordable price with genuine spare parts. We repair all types of LCD TV, LED TV, Plasma & 4K Smart TV. We provide doorstep home services. If you are looking for  TV Repair Services in<strong> Kanpur, Uttar Pradesh </strong>then you are on the right place. Getting your LCD, LED TV for repair can be hard for you because of it size. Don’t worry we offer awesome on site Home repair service</div>
+            <div className="flex w-full  items-center justify-center bg-red-400 p-6 font-poppins-regular ">
+              <h2 className="text-white font-bold  text-center text-2xl md:text-3xl ">
+                Call us!
+                <div className="flex bg-white p-2 md:p-4 rounded-lg mt-5 items-center justify-center "><IoPhonePortraitOutline className="text-red-400  text-3xl md:text-4xl bg-white p-1 rounded-full" /><a href="tel:+917800031888" className="font-poppins-regular font-semibold text-red-400 text-xl">+91 7800031888</a></div>
+              </h2>
+            </div>
+          </motion.div>
+        </section>
 
-          <div className="flex w-full  items-center justify-center bg-red-400 p-6 font-poppins-regular ">
-            <h2 className="text-white font-bold  text-center text-2xl md:text-3xl ">
-              Call us!
-              <div className="flex bg-white p-2 md:p-4 rounded-lg mt-5 items-center justify-center "><IoPhonePortraitOutline className="text-red-400  text-3xl md:text-4xl bg-white p-1 rounded-full" /><a href="tel:+917800031888" className="font-poppins-regular font-semibold text-red-400 text-xl">+91 7800031888</a></div>
-            </h2>
-          </div>
-        </motion.div>
         <div className=" flex flex-col w-full items-center justify-center mt-10 space-y-10 ">
           <h1 className=" text-3xl  md:text-5xl md:font-bold font-bold font-poppins-regular">Why Choose us!</h1>
           <div className="md:flex   text-red-500 text-5xl items-center justify-around w-full space-y-20 md:space-y-0">
@@ -158,42 +164,43 @@ export default function Service() {
         <div className="mt-10">
           <ElementorSectionMock />
         </div>
-        <div className="text-center md:font-extrabold md:text-5xl mt-10 text-3xl font-extrabold font-poppins-regular">Services</div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  w-full md:-translate-y-12 ">
-          {[
-            { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007670/installing-mount-tv_f3vfcc.jpg", p_name: "Installations", des: "We provide Insatallations Services of all brands. Same Day Service. Just contact our service Center." },
-            { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007711/the-man-repairing-broken-tv-at-home_coemks.jpg", p_name: "T.V Panel Repair", des: "We provide the best quality LED TV panel repair services in Kanpur U.P." },
-            { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007771/cr_t_0_25_l_0_25_w_100_25_h_100_25_rb2r2y.jpg", p_name: "Curved T.V Repair", des: "We provide Curved Tv Repair Services. With the support of our expert engineers, we are engaged in offering all brand television services to our valued customers." },
-            { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007850/20130529205609127_5755D67K_iyy3d7.jpg", p_name: "Plasma T.V Repair", des: "Our specialist fixes generally all issues at your door step yet assuming we found any serious issue we carry your plasma to us, fix that and drop it at your place." },
-            { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007813/Best-Television-repair-service-in-Lucknow-e1724605312471_wmrfdx.png", p_name: "Smart T.V Repair", des: "We Provide Doorstep Tv Repair Service For Smart LED TV. Our Expert Engineer Will Visit your Home." },
-            { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746008261/1520201908882_ziyfue.jpg", p_name: "3D T.V Repair", des: "We provide 3D Tv Repair Services. We provide the best quality LED 3D TV repair services in Kanpur, U.P. We are here to repair all brands of 3D TV in Kanpur." },
-          ].map((item, index) => (
-            <div key={index} className=" h-full flex justify-center ">
-              <CardContainer className="w-full max-w-sm cursor-pointer md:m-0 ml-10 mr-10 md:h-fit h-72 ">
-                <CardBody className="bg-white relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-full rounded-xl p-2 border flex flex-col h-auto shadow-xl shadow-white">
-                  <CardItem translateZ={100} className="w-full mt-4">
-                    <motion.img
-                      src={item.image}
-                      alt="thumbnail"
-                      height="1000"
-                      width="1000"
-                      className=" relative h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                      whileHover={{
-                        scale: 1.1,
-                        rotateY: 1,
-                        transition: { type: "spring", stiffness: 300 },
-                      }}
-                    />
-                  </CardItem>
-                  <div className="absolute bg-red-500 text-white text-xl font-bold pl-4 pr-4 rounded-xl mt-7 ml-4 text-ou tline shadow-xl shadow-black font-poppins-regular">{item.p_name}</div>
-                  <CardItem as="p" className=" bg-red-400 text-white text-sm max-w-sm mt-6 p-2 rounded-xl hover:border hover:border-black hover:shadow-black hover:shadow-2xl font-poppins-regular">
-                    {item.des}
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
-            </div>
-          ))}
-        </div>
+        <section id="services"><div className="text-center md:font-extrabold md:text-5xl mt-10 text-3xl font-extrabold font-poppins-regular">Services</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  w-full md:-translate-y-12 ">
+            {[
+              { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007670/installing-mount-tv_f3vfcc.jpg", p_name: "Installations", des: "We provide Insatallations Services of all brands. Same Day Service. Just contact our service Center." },
+              { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007711/the-man-repairing-broken-tv-at-home_coemks.jpg", p_name: "T.V Panel Repair", des: "We provide the best quality LED TV panel repair services in Kanpur U.P." },
+              { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007771/cr_t_0_25_l_0_25_w_100_25_h_100_25_rb2r2y.jpg", p_name: "Curved T.V Repair", des: "We provide Curved Tv Repair Services. With the support of our expert engineers, we are engaged in offering all brand television services to our valued customers." },
+              { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007850/20130529205609127_5755D67K_iyy3d7.jpg", p_name: "Plasma T.V Repair", des: "Our specialist fixes generally all issues at your door step yet assuming we found any serious issue we carry your plasma to us, fix that and drop it at your place." },
+              { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746007813/Best-Television-repair-service-in-Lucknow-e1724605312471_wmrfdx.png", p_name: "Smart T.V Repair", des: "We Provide Doorstep Tv Repair Service For Smart LED TV. Our Expert Engineer Will Visit your Home." },
+              { image: "https://res.cloudinary.com/dq829orud/image/upload/v1746008261/1520201908882_ziyfue.jpg", p_name: "3D T.V Repair", des: "We provide 3D Tv Repair Services. We provide the best quality LED 3D TV repair services in Kanpur, U.P. We are here to repair all brands of 3D TV in Kanpur." },
+            ].map((item, index) => (
+              <div key={index} className=" h-full flex justify-center ">
+                <CardContainer className="w-full max-w-sm cursor-pointer md:m-0 ml-10 mr-10 md:h-fit h-72 ">
+                  <CardBody className="bg-white relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-full rounded-xl p-2 border flex flex-col h-auto shadow-xl shadow-white">
+                    <CardItem translateZ={100} className="w-full mt-4">
+                      <motion.img
+                        src={item.image}
+                        alt="thumbnail"
+                        height="1000"
+                        width="1000"
+                        className=" relative h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        whileHover={{
+                          scale: 1.1,
+                          rotateY: 1,
+                          transition: { type: "spring", stiffness: 300 },
+                        }}
+                      />
+                    </CardItem>
+                    <div className="absolute bg-red-500 text-white text-xl font-bold pl-4 pr-4 rounded-xl mt-7 ml-4 text-ou tline shadow-xl shadow-black font-poppins-regular">{item.p_name}</div>
+                    <CardItem as="p" className=" bg-red-400 text-white text-sm max-w-sm mt-6 p-2 rounded-xl hover:border hover:border-black hover:shadow-black hover:shadow-2xl font-poppins-regular">
+                      {item.des}
+                    </CardItem>
+                  </CardBody>
+                </CardContainer>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <motion.div className="w-full relative ">
 
@@ -272,6 +279,16 @@ export default function Service() {
                 </div>
               </div>
             </div>
+
+          </div>
+
+
+
+
+
+        </motion.div>
+        <section id="contact">
+          <div className="flex flex-col items-center">
             <div className="md:text-4xl text-[#1a103d] font-poppins-regular text-2xl font-bold mt-5">
               Review Us On
             </div>
@@ -286,48 +303,45 @@ export default function Service() {
                 <FaInstagram />
               </div>
             </div>
+          </div>
+          <div className="max-w-md mx-auto p-6 md:w-full w-fit rounded-lg shadow-md mt-20">
+            <div className="flex items-center justify-between rounded-lg"><h2 className="text-xl  font-bold mb-4 text-white bg-[#fd4f4f] w-fit p-2 shadow-md rounded-lg ">Contact Us</h2>
+              <PiCallBellBold className="text-white bg-red-500 text-4xl p-2 rounded-lg mb-4 font-semibold shadow-md text-outline" />
+            </div>
+
+            <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Your Name"
+                required
+                className="p-2 border border-red-400 rounded bg-white placeholder-red-300 focus:border-red-500 focus:outline"
+              />
+              <input
+                type="tel"
+                name="user_phone"
+                placeholder="Mobile Number"
+                required
+                className="p-2 border border-red-400 rounded bg-white placeholder-red-300 focus:border-red-500 focus:outline"
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="4"
+                required
+                className="p-2 border  border-red-400 rounded bg-white placeholder-red-300 focus:border-red-500 focus:outline"
+              ></textarea>
+              <button
+                type="submit"
+                className="bg-red-400 text-white py-2 rounded hover:bg-red-500 shadow-xl cursor-pointer"
+              >
+                Send Request
+              </button>
+            </form>
 
           </div>
+        </section>
 
-
-
-        </motion.div>
-        <div className="max-w-md mx-auto p-6 md:w-full w-fit rounded-lg shadow-md mt-20">
-          <div className="flex items-center justify-between rounded-lg"><h2 className="text-xl  font-bold mb-4 text-white bg-[#fd4f4f] w-fit p-2 shadow-md rounded-lg ">Contact Us</h2>
-            <PiCallBellBold className="text-white bg-red-500 text-4xl p-2 rounded-lg mb-4 font-semibold shadow-md text-outline" />
-          </div>
-
-          <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
-            <input
-              type="text"
-              name="user_name"
-              placeholder="Your Name"
-              required
-              className="p-2 border border-red-400 rounded bg-white placeholder-red-300 focus:border-red-500 focus:outline"
-            />
-            <input
-              type="tel"
-              name="user_phone"
-              placeholder="Mobile Number"
-              required
-              className="p-2 border border-red-400 rounded bg-white placeholder-red-300 focus:border-red-500 focus:outline"
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="4"
-              required
-              className="p-2 border  border-red-400 rounded bg-white placeholder-red-300 focus:border-red-500 focus:outline"
-            ></textarea>
-            <button
-              type="submit"
-              className="bg-red-400 text-white py-2 rounded hover:bg-red-500 shadow-xl cursor-pointer"
-            >
-              Send Request
-            </button>
-          </form>
-
-        </div>
         <div className="bg-[#d04c4c] flex flex-col md:flex-row items-start md:items-stretch justify-between rounded-md m-2  md:h-40 space-y-4 md:space-y-0 md:space-x-4 p-4">
 
           {/* Address Section */}
@@ -357,7 +371,7 @@ export default function Service() {
             ></iframe>
           </div>
         </div>
-        <FloatingContactWidget/>
+        <FloatingContactWidget />
 
 
         <div>
@@ -365,7 +379,7 @@ export default function Service() {
         </div>
 
       </motion.div>
-    </div>
+    </div >
   );
 
 }
